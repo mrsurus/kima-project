@@ -1,0 +1,133 @@
+<div class="">
+    <!-- top bar with eye btn -->
+    <div>
+        <div class="flex items-center justify-between p-2 h-14 bg-white rounded">
+            <div class=" flex gap-6 h-full">
+                <div class="  ">
+                    <nz-cascader [nzSize]="largesize" [nzExpandTrigger]="'hover'" [nzOptions]="nzOptions"
+                        [(ngModel)]="values" (ngModelChange)="onChanges($event)">
+                    </nz-cascader>
+
+                </div>
+                <div class="border h-full bg-gray-50 px-2 rounded ">
+                    <div class="grid grid-cols-6 h-full my-au gap-3">
+
+                        <div class="my-auto w-full " >
+                            <ng-container *ngIf="!visible; else alternateComponent">
+                                <button (click)="open()" nz-button nzType="primary" [nzSize]="sized">
+                                    <img c src="../../../../assets/topbaricons/eye-off.svg" alt="">
+                                </button> </ng-container>
+
+                            <ng-template #alternateComponent>
+                                <button class="w-20" (click)="close()" nz-button nzType="primary" [nzSize]="sized">
+                                    <span  nz-icon nzType="eye" nzTheme="outline"></span>
+                                </button>
+                            </ng-template>
+                        </div>
+
+
+                        <button class=" ">
+                            <img src="../../../../assets/topbaricons/undo.svg" alt="">
+                        </button>
+
+                        <button class="">
+                            <span class="sr-only">redo</span>
+                            <img src="../../../../assets/topbaricons/redo.svg" alt="">
+                        </button>
+
+                        <button>
+                            <img src="../../../../assets/topbaricons/print.svg" alt="">
+                        </button>
+
+                        <button>
+                            <img src="../../../../assets/topbaricons/secondbracket.svg" alt="">
+                        </button>
+                        <button>
+                            <img src="../../../../assets/topbaricons/trash.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border h-full bg-gray-50 rounded ">
+                <div class="grid grid-cols-4 h-full my-auto gap-4">
+
+                    <button nz-button nzType="primary" [nzSize]="largesize">
+                        <img src="../../../../assets/topbaricons/tv.svg" alt="">
+                    </button>
+
+                    <button class="  ">
+                        <img src="../../../../assets/topbaricons/Laptop.svg" alt="">
+                    </button>
+
+                    <button class="">
+                        <span class="sr-only">refresh2</span>
+                        <img src="../../../../assets/topbaricons/Tab.svg" alt="">
+                    </button>
+
+                    <button>
+                        <img src="../../../../assets/topbaricons/Phone.svg" alt="">
+                    </button>
+                </div>
+            </div>
+
+            <div class=" flex items-center gap-2 justify-end">
+                <a nz-dropdown nz-button [nzSize]="largesize" nzType="primary" nzTrigger="click"
+                    [nzDropdownMenu]="menu">
+                    Actions
+                    <span nz-icon nzType="down"></span>
+                </a>
+                <nz-dropdown-menu #menu="nzDropdownMenu">
+                    <ul nz-menu>
+                        <li nz-menu-item>Download Json</li>
+                        <li nz-menu-item>Json Upload</li>
+                        <li nz-menu-item>Paste</li>
+                        <li nz-menu-item>Select Json Download</li>
+                        <li nz-menu-item>Select Json Upload</li>
+
+                    </ul>
+                </nz-dropdown-menu>
+                <a nz-button [nzSize]="largesize" nzType="primary">
+                    <span nz-icon nzType="upload" nzTheme="outline"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- main page with sidebar and main -->
+    
+    <div class="flex mt-2 ">
+        <div class="">
+            <div *ngIf="visible" [ngClass]="{'visible': visible}" class="bg-white text-gray-700 h-screen p-3 w-64 ">
+                <nz-tree-view [nzTreeControl]="treeControl" [nzDataSource]="dataSource">
+                    <nz-tree-node *nzTreeNodeDef="let node" nzTreeNodePadding>
+                        <nz-tree-node-toggle nzTreeNodeNoopToggle></nz-tree-node-toggle>
+                        <nz-tree-node-option [nzSelected]="selectListSelection.isSelected(node)"
+                            (nzClick)="selectListSelection.toggle(node)">
+                            <div class="flex items-center gap-1 ">
+                                <span class="opacity-50" nz-icon nzType="radius-upleft" nzTheme="outline"></span>
+                                {{ node.name }}
+                            </div>
+                        </nz-tree-node-option>
+                    </nz-tree-node>
+
+                    <nz-tree-node *nzTreeNodeDef="let node; when: hasChild" nzTreeNodePadding>
+                        <nz-tree-node-toggle>
+                            <span nz-icon nzType="caret-down" nzTreeNodeToggleRotateIcon></span>
+                        </nz-tree-node-toggle>
+                        <nz-tree-node-option [nzSelected]="selectListSelection.isSelected(node)"
+                            (nzClick)="selectListSelection.toggle(node)">
+                            <div class="flex items-center gap-1">
+                                <span class="opacity-50" nz-icon nzType="radius-upleft" nzTheme="outline"></span>
+                                {{ node.name }}
+                            </div>
+                        </nz-tree-node-option>
+                    </nz-tree-node>
+                </nz-tree-view>
+            </div>
+        </div>
+        <div class=" w-full ">
+            <app-navbar></app-navbar>
+            <app-web-home></app-web-home>
+        </div>
+    </div>
+</div>

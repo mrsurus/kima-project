@@ -1,0 +1,65 @@
+<div class="bg-white w-full border ">
+    <div class="flex items-center gap-8 font-semibold text-gray-700 p-2">
+        <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+            Details
+            <span nz-icon nzType="down"></span>
+        </a>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul class="w-36 mt-32" nz-menu>
+                <li nz-menu-item>Calender</li>
+                <li nz-menu-item>Chat</li>
+                <li nz-menu-item>Kanban</li>
+                <li nz-menu-item>Board File</li>
+                <li nz-menu-item>Manager</li>
+                <li nz-submenu nzTitle="Email">
+                    <ul>
+                        <li nz-menu-item>saimon@gmail.com</li>
+                        <li nz-menu-item>mrsurusmk07@gmail.com</li>
+                    </ul>
+                </li>
+                <li nz-submenu nzTitle="Contacts">
+                    <ul>
+                        <li nz-menu-item>saimon@gmail.com</li>
+                        <li nz-menu-item>mrsurusmk07@gmail.com</li>
+                    </ul>
+                </li>
+                <li nz-menu-item>Gallery</li>
+                <li nz-menu-item>Projects</li>
+            </ul>
+        </nz-dropdown-menu>
+        <button routerLink="resolution">Resolution</button>
+        <button>Tasks</button>
+        <button>Checklist</button>
+        <button>Work logs</button>
+        <button>Time Analysis</button>
+        <button>History</button>
+    </div>
+    <div class="flex justify-between border-t-2 p-2 ">
+        <div>
+            <p class="font-bold mb-2">Please Download the specified file from the given link</p>
+
+            <div class=" flex justify-between text-gray-400">
+                <p>By: John Doe</p>
+                <p>Comments: 14 Peoples</p>
+            </div>
+        </div>
+        <div class=" flex gap-4 items-center">
+            <button nz-button nzType="primary">Details</button>
+            <button nz-button nzType="primary">Assign</button>
+            <a nz-dropdown nz-button [nzSize]="size" nzType="primary" nzTrigger="click" [nzDropdownMenu]="actions">
+                Actions
+                <span nz-icon nzType="down"></span>
+            </a>
+            <nz-dropdown-menu #actions="nzDropdownMenu">
+                <ul nz-menu>
+                    <li nz-menu-item>Download Json</li>
+                    <li nz-menu-item>Json Upload</li>
+                    <li nz-menu-item>Paste</li>
+                    <li nz-menu-item>Select Json Download</li>
+                    <li nz-menu-item>Select Json Upload</li>
+
+                </ul>
+            </nz-dropdown-menu>
+        </div>
+    </div>
+</div>

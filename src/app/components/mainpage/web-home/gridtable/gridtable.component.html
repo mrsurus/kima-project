@@ -1,0 +1,72 @@
+<nz-table [nzFrontPagination]="false" [nzPageSize]="100" class=" " #borderedTable [nzData]="abcd">
+    <div class="h-full border border-white   ">
+        <div class="grid grid-cols-9 font-bold bg-gray-100  ">
+            <div class="grid grid-cols-9 col-span-3  border">
+                <p class="h-full text-center my-auto p-2 border">
+                    <label nz-checkbox [(ngModel)]="checked"></label>
+                </p>
+                <p class="h-full text-center my-auto p-2 border"></p>
+                <p class="h-full text-center my-auto p-2 border"></p>
+                <p class="h-full text-center my-auto p-2 border"></p>
+                <p class="h-full text-center my-auto p-2 border"></p>
+                <p class="h-full text-center my-auto p-2 border">
+                    ID
+                </p>
+                <p class="h-full text-center my-auto p-2 border"></p>
+                <p class="h-full text-center my-auto p-2 border"></p>
+                <p class="h-full text-center my-auto p-2 border"> </p>
+            </div>
+            <div class="border flex items-center justify-center">Subject</div>
+            <div class="border flex items-center justify-center">Requester Name</div>
+            <div class="border flex items-center justify-center">Created Date</div>
+            <div class="border flex items-center justify-center">Status</div>
+            <div class="border flex items-center justify-center">Priority</div>
+            <div class="border flex items-center justify-center">Assigned to</div>
+        </div>
+        <div class="grid grid-cols-9 " *ngFor="let data of borderedTable.data">
+            <div class="grid border-b-2 grid-cols-9 col-span-3">
+                <p class="h-full text-center my-auto p-2 ">
+                    <label nz-checkbox ></label>
+                </p>
+                <p class="h-full text-center my-auto p-2 ">
+                    <img width="" height=""  src="../../../../assets/charticons/inbox.svg" alt="">
+                </p>
+                <p class="h-full text-center my-auto p-2 ">
+                    <img width="" height=""  src="../../../../assets/charticons/form.svg" alt="">
+                </p>
+                <p class="h-full text-center my-auto p-2 ">
+                    <img width="" height=""  src="../../../../assets/charticons/pen.svg" alt="">
+                </p>
+                <p class="h-full text-center my-auto p-2 ">
+                    <img width="" height=""  src="../../../../assets/charticons/user.svg" alt="">
+                </p>
+                <p class="h-full text-center my-auto p-2 ">
+                    {{data.id}}
+                </p>
+                <p class="h-full text-center my-auto p-2 ">
+                    <img width="" height=""  src="../../../../assets/charticons/shopping-cart.svg" alt="">
+                </p>
+                <p class="h-full text-center my-auto p-2 ">
+                    <img width="" height=""  src="../../../../assets/charticons/tik.svg" alt="">
+                </p>
+                <p class="h-full text-center my-auto p-2 ">
+                    <img width="" height=""  src="../../../../assets/charticons/Group 1471.svg" alt="">
+                </p>
+            </div>
+            <div class=" border-b-2 flex items-center justify-center text-blue-500">{{data.subject}}</div>
+            <div class=" border-b-2 flex items-center justify-center">{{data.requsterName}}</div>
+            <div class=" border-b-2 flex items-center justify-center">{{data.createdDate}}</div>
+            <div class=" border-b-2 flex items-center justify-center">
+                {{data.status}}
+            </div>
+            <div class=" border-b-2 flex justify-center items-center">
+                <img class="mr-3" width="" height=""  src="../../../../assets/charticons/Ellipse 17.svg" alt="">
+                {{data.priority}}
+            </div>
+            <div class=" border-b-2 flex items-center justify-center">
+                {{data.assignTo}}
+                <img width="" height=""  src="../../../../assets/charticons/clock.svg" alt="">
+            </div>
+        </div>
+    </div>
+</nz-table>

@@ -1,0 +1,68 @@
+<div class="bg-white mt-2">
+    <div class="flex border h-9 px-3 justify-between items-center ">
+        <p class=" m-0 font-bold">Form 1</p>
+        <div>
+            <a nz-button [nzSize]="size" nzType="link">Details</a>
+            <a nz-button [nzSize]="size" nzType="link">Assign</a>
+            <span nz-icon nzType="down" nzTheme="outline"></span>
+        </div>
+    </div>
+    <nz-table nzShowPagination="false" #borderedTable nzBordered="true" [nzData]="listOfData">
+        <tbody class="">
+            <tr  *ngFor="let data of borderedTable.data">
+                <td class="p-0 bg-gray-100  border">Name</td>
+                <td class=" p-0">{{ data.name }}</td>
+                <td class="p-0 bg-gray-100">Name</td>
+                <td class="p-0">{{data.name}}</td>
+            </tr>
+        </tbody>
+    </nz-table>
+    <div class="flex border h-9 px-3 justify-end items-center ">
+        <div>
+            <button nz-button nzType="primary" [nzSize]="size2"  >Reply </button>
+            <button class="bg-gray-200 rounded h-8 ml-2 w-24 font-semibold text-sm m-1">Forward</button>
+            
+        </div>
+    </div>
+</div>
+<div class="bg-white mt-2">
+    <div class="flex border h-9 px-3 justify-between items-center ">
+        <p class=" m-0 font-bold">Form 1</p>
+        <div>
+            <a nz-button [nzSize]="size" nzType="link">Details</a>
+            <a nz-button [nzSize]="size" nzType="link">Assign</a>
+            <span nz-icon nzType="down" nzTheme="outline"></span>
+        </div>
+    </div>
+    <nz-table nzShowPagination="false" #borderedTable nzBordered="true" [nzData]="listOfData">
+        <tbody class="">
+            <tr *ngFor="let data of borderedTable.data.slice(0,3)">
+                <td class="p-0 bg-gray-100  border">Name</td>
+                <td class=" p-0">{{ data.name }}</td>
+                <td class="p-0 bg-gray-100">Name</td>
+                <td class="p-0">{{data.name}}</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <p class="font-bold">Please Download the specified file from the given link</p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dicta impedit exercitationem facere
+                    modi iste sint maxime error totam nostrum eveniet mollitia harum esse consectetur sed eius enim,
+                    nisi quam suscipit, soluta vel provident architecto earum. Facilis aliquam laudantium corrupti.
+                </td>
+            </tr>
+            <tr *ngFor="let data of borderedTable.data.slice(0,1)">
+                <td class="p-0 bg-gray-100  border">Name</td>
+                <td class=" p-0">{{ data.name }}</td>
+                <td class="p-0 bg-gray-100">Name</td>
+                <td class="p-0">{{data.name}}</td>
+            </tr>
+        </tbody>
+    </nz-table>
+    
+</div>
+<div class="flex border h-9 px-3  items-center m-3 ">
+    <div>
+        <button nz-button nzType="primary" [nzSize]="size2">Save </button>
+        <button class="bg-gray-300 rounded h-8 ml-2 w-24 font-semibold text-sm m-1">Cancel</button>
+    </div>
+</div>
