@@ -1,32 +1,33 @@
-<div class="">
+<div class="  z-10 ">
     <!-- top bar with eye btn -->
     <div>
         <div class="flex items-center justify-between p-2 h-14 bg-white rounded">
             <div class=" flex gap-6 h-full">
-                <div class="  ">
+                <div class=" cascader ">
                     <nz-cascader [nzSize]="largesize" [nzExpandTrigger]="'hover'" [nzOptions]="nzOptions"
                         [(ngModel)]="values" (ngModelChange)="onChanges($event)">
                     </nz-cascader>
 
                 </div>
-                <div class="border h-full bg-gray-50 px-2 rounded ">
-                    <div class="grid grid-cols-6 h-full my-au gap-3">
+                <div class="border  h-full bg-gray-50 px-2 rounded ">
+                    <div class=" w-[280px] grid grid-cols-6 h-full my-auto gap-2">
 
-                        <div class="my-auto w-full " >
+                        <div class="my-auto">
                             <ng-container *ngIf="!visible; else alternateComponent">
-                                <button (click)="open()" nz-button nzType="primary" [nzSize]="sized">
-                                    <img c src="../../../../assets/topbaricons/eye-off.svg" alt="">
-                                </button> </ng-container>
+                                <button class="fixed" nz-button (click)="open()"  nzType="primary" >
+                                    <span class="" nz-icon nzType="eye-invisible" nzTheme="outline"></span>
+                                </button> 
+                            </ng-container>
 
                             <ng-template #alternateComponent>
-                                <button class="w-20" (click)="close()" nz-button nzType="primary" [nzSize]="sized">
-                                    <span  nz-icon nzType="eye" nzTheme="outline"></span>
+                                <button (click)="close()" nz-button nzType="primary" [nzSize]="sized">
+                                    <span nz-icon nzType="eye" nzTheme="outline"></span>
                                 </button>
                             </ng-template>
                         </div>
 
 
-                        <button class=" ">
+                        <button class=" " >
                             <img src="../../../../assets/topbaricons/undo.svg" alt="">
                         </button>
 
@@ -94,40 +95,19 @@
         </div>
     </div>
     <!-- main page with sidebar and main -->
-    
     <div class="flex mt-2 ">
         <div class="">
-            <div *ngIf="visible" [ngClass]="{'visible': visible}" class="bg-white text-gray-700 h-screen p-3 w-64 ">
-                <nz-tree-view [nzTreeControl]="treeControl" [nzDataSource]="dataSource">
-                    <nz-tree-node *nzTreeNodeDef="let node" nzTreeNodePadding>
-                        <nz-tree-node-toggle nzTreeNodeNoopToggle></nz-tree-node-toggle>
-                        <nz-tree-node-option [nzSelected]="selectListSelection.isSelected(node)"
-                            (nzClick)="selectListSelection.toggle(node)">
-                            <div class="flex items-center gap-1 ">
-                                <span class="opacity-50" nz-icon nzType="radius-upleft" nzTheme="outline"></span>
-                                {{ node.name }}
-                            </div>
-                        </nz-tree-node-option>
-                    </nz-tree-node>
-
-                    <nz-tree-node *nzTreeNodeDef="let node; when: hasChild" nzTreeNodePadding>
-                        <nz-tree-node-toggle>
-                            <span nz-icon nzType="caret-down" nzTreeNodeToggleRotateIcon></span>
-                        </nz-tree-node-toggle>
-                        <nz-tree-node-option [nzSelected]="selectListSelection.isSelected(node)"
-                            (nzClick)="selectListSelection.toggle(node)">
-                            <div class="flex items-center gap-1">
-                                <span class="opacity-50" nz-icon nzType="radius-upleft" nzTheme="outline"></span>
-                                {{ node.name }}
-                            </div>
-                        </nz-tree-node-option>
-                    </nz-tree-node>
-                </nz-tree-view>
-            </div>
+            <app-treemenu *ngIf="visible" ></app-treemenu>
         </div>
         <div class=" w-full ">
             <app-navbar></app-navbar>
             <app-web-home></app-web-home>
         </div>
     </div>
+    
+</div>
+<app-designdrawer1></app-designdrawer1>
+<br>
+<div class="mt-2">
+    <app-designdrawer2></app-designdrawer2>
 </div>

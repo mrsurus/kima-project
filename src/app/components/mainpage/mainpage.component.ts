@@ -1,10 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { NzButtonSize } from 'ng-zorro-antd/button';
 import { NzCascaderOption } from 'ng-zorro-antd/cascader';
-import { FlatNode, TreeNode } from 'src/app/Modules';
-import { FlatTreeControl } from '@angular/cdk/tree';
-import { SelectionModel } from '@angular/cdk/collections';
-import { NzTreeFlatDataSource, NzTreeFlattener } from 'ng-zorro-antd/tree-view';
 
 const options = [
   {
@@ -42,52 +38,6 @@ const options = [
 
 // for nz tree
 
-const TREE_DATA: TreeNode[] = [
-  {
-    name: 'Page',
-    children: [
-      {
-        name: 'Page Header',
-        children: [{ name: 'Header' }]
-      },
-      {
-        name: 'Page Body',
-        children: [
-          {
-            name: 'Sections',
-            children: [
-              {
-                name: 'Header',
-                children: [{ name: 'Sub-Header' }]
-              },
-              {
-                name: 'Body',
-                children: [{ name: 'First Name' }, { name: 'Last Name' }, { name: 'Email' }]
-              }
-            ]
-          },
-          {
-            name: 'Sections',
-            children: [{
-              name: 'Header',
-              children: [{ name: 'Sub-Header' }]
-            },
-            {
-              name: 'Body',
-              children: [{ name: 'Address' }, { name: 'Location' }, { name: 'Country' }]
-            }]
-          }
-        ]
-      },
-      {
-        name: 'Page Footer',
-        children: [{ name: 'leaf' }]
-      },
-
-    ]
-  }
-];
-
 
 
 @Component({
@@ -100,6 +50,8 @@ const TREE_DATA: TreeNode[] = [
 
 
 export class MainpageComponent {
+
+
 
   visible = false
 
@@ -118,37 +70,7 @@ export class MainpageComponent {
     console.log(values, this.values);
   }
 
-  // for nztree 
 
-  private transformer = (node: TreeNode, level: number): FlatNode => ({
-    expandable: !!node.children && node.children.length > 0,
-    name: node.name,
-    level,
-    disabled: !!node.disabled
-  });
-  selectListSelection = new SelectionModel<FlatNode>(true);
-
-  treeControl = new FlatTreeControl<FlatNode>(
-    node => node.level,
-    node => node.expandable
-  );
-
-  treeFlattener = new NzTreeFlattener(
-    this.transformer,
-    node => node.level,
-    node => node.expandable,
-    node => node.children
-  );
-
-  dataSource = new NzTreeFlatDataSource(this.treeControl, this.treeFlattener);
-
-  constructor() {
-    this.dataSource.setData(TREE_DATA);
-    this.treeControl.expandAll();
-  }
-
-  hasChild = (_: number, node: FlatNode): boolean => node.expandable;
-  
   
   smallsize: NzButtonSize = 'small';
   largesize: NzButtonSize = 'large';

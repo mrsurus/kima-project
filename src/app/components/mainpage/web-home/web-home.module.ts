@@ -13,6 +13,8 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FormsModule } from '@angular/forms';
 import { FormtableComponent } from './formtable/formtable.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { DashbordbarComponent } from './dashbordbar/dashbordbar.component';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 
 
 const routes: Routes=[
@@ -33,6 +35,7 @@ const routes: Routes=[
     TopbarComponent,
     HomesidebarComponent,
     FormtableComponent,
+    DashbordbarComponent,
   ],
 
   imports: [
@@ -44,7 +47,9 @@ const routes: Routes=[
     NzCheckboxModule,
     FormsModule,
     RouterModule.forChild(routes),
-    NzIconModule
+    NzIconModule,
+    NzBreadCrumbModule
+
   ],
   exports: [
     WebHomeComponent,

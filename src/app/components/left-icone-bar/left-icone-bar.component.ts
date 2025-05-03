@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class LeftIconeBarComponent {
 
+  isCollapsed = false;
+
+  toggleCollapsed(): void {
+    this.isCollapsed = !this.isCollapsed;
+  }
 }

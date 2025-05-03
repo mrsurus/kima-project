@@ -1,0 +1,163 @@
+<ng-template #drawerTemplate let-data let-drawerRef="drawerRef">
+   <!-- Application menu bar -->
+   <div>
+      <div class="flex gap-5">
+         <p class="font-light">Application Menu</p>
+         <p class="font-light">In Page Menu</p>
+      </div>
+      <div>
+         <p>Application Menu Configuration</p>
+      </div>
+   </div>
+   <!-- application menu home section -->
+   <div class="bg-white mt-2">
+      <!-- menu design -->
+      <div class=" ">
+         <nz-collapse nzAccordion>
+            <nz-collapse-panel *ngFor="let panel of menu" nzHeader="Font Design" [nzActive]="panel.active">
+            
+               <nz-table nzShowPagination="false" #borderedTable [nzData]="menu">
+                  <tbody class="border-none">
+                     <tr *ngFor="let data of borderedTable.data">
+                        <td class="p-0 bg-gray-100  border">Background Color</td>
+                        <td class=" flex items-center p-0">
+                           <img class="mr-4 " src="../../../../assets/Designcolor/blue.png" alt="">
+                           {{ data.bgcolor }}
+                        </td>
+                        <td class="p-0 bg-gray-100">Color</td>
+                        <td class=" flex items-center p-0">
+                           <img class="mr-4 " src="../../../../assets/Designcolor/Rectangle 4468.jpg" alt="">
+                           {{ data.color }}
+                        </td>
+                     </tr>
+                     <tr *ngFor="let data of borderedTable.data">
+                        <td class="p-0 bg-gray-100  border">Text Color</td>
+                        <td class=" flex items-center p-0">
+                           <img class="mr-4 " src="../../../../assets/Designcolor/black.png" alt="">
+                           {{ data.textcolor }}
+                        </td>
+                        <td class="p-0 bg-gray-100">Active GB Color</td>
+                        <td class=" flex items-center p-0">
+                           <img class="mr-4 " src="../../../../assets/Designcolor/black.png" alt="">
+                           {{ data.activbgcolor }}
+                        </td>
+                     </tr>
+                     <tr *ngFor="let data of borderedTable.data">
+                        <td class="p-0 bg-gray-100  border">Hover Text Color</td>
+                        <td class=" flex items-center p-0">
+                           <img class="mr-4 " src="../../../../assets/Designcolor/blue.png" alt="">
+                           {{ data.hovertextcolor }}
+                        </td>
+                        <td class="p-0 bg-gray-100">Text Size</td>
+                        <td class=" flex items-center p-0">
+                           <img class="mr-4 " src="../../../../assets/Designcolor/black.png" alt="">
+                           {{ data.textsize }}
+                        </td>
+                     </tr>
+                  </tbody>
+               </nz-table>
+               <div class="flex  h-9 px-3 justify-end items-center my-auto ">
+                  <div class="my-3">
+                     <button class="bg-blue-400 text-white rounded h-7 ml-2 w-20 font-semibold text-sm m-1">Save</button>
+                     <button class="bg-gray-200 rounded h-7 ml-2 w-20 font-semibold text-sm m-1">Cancel</button>
+                  </div>
+               </div>
+            </nz-collapse-panel>
+            
+         </nz-collapse>
+      </div>
+      <!-- icone design -->
+      <div class="mt-2">
+         <nz-collapse nzAccordion>
+            <nz-collapse-panel *ngFor="let panel of icons" nzHeader="Icone Design" [nzActive]="panel.active">
+               <nz-table nzShowPagination="false" #borderedTable [nzData]="icons">
+                  <tbody class="border-none">
+                     <tr *ngFor="let data of borderedTable.data">
+                        <td class="p-0 bg-gray-100  border">Icon Color</td>
+                        <td class=" flex items-center p-0">
+                           <img class="mr-4 " src="../../../../assets/Designcolor/blue.png" alt="">
+                           {{ data.iconcolor }}
+                        </td>
+                        <td class="p-0 bg-gray-100">Hover Icon Color</td>
+                        <td class=" flex items-center p-0">
+                           <img class="mr-4 " src="../../../../assets/Designcolor/Rectangle 4468.jpg" alt="">
+                           {{ data.hovericoncolor }}
+                        </td>
+                     </tr>
+                     <tr *ngFor="let data of borderedTable.data">
+                        <td class="p-0 bg-gray-100  border">Active Icon Color</td>
+                        <td class=" flex items-center p-0">
+                           <img class="mr-4 " src="../../../../assets/Designcolor/black.png" alt="">
+                           {{ data.activeiconcolor }}
+                        </td>
+                        <td class="p-0 bg-gray-100">Icon Size</td>
+                        <td class=" flex items-center p-0">
+                           <img class="mr-4 " src="../../../../assets/Designcolor/black.png" alt="">
+                           {{ data.iconsize }}
+                        </td>
+                     </tr>
+                     <tr *ngFor="let data of borderedTable.data">
+                        <td class="p-0 bg-gray-100  border">Icon Type</td>
+                        <td class=" flex items-center p-0">
+                           <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+                              Icon Type
+                              <span nz-icon nzType="down"></span>
+                            </a>
+                            <nz-dropdown-menu #menu="nzDropdownMenu">
+                              <ul nz-menu>
+                                <li nz-menu-item>1st menu item</li>
+                                <li nz-menu-item>2nd menu item</li>
+                              </ul>
+                           </nz-dropdown-menu>
+
+                        </td>
+                        <td class="p-0 bg-gray-100"></td>
+                        <td class=" flex items-center p-0">
+                           
+                        </td>
+                     </tr>
+                  </tbody>
+               </nz-table>
+               <div class="flex  h-9 px-3 justify-end items-center my-auto ">
+                  <div class="my-3">
+                     <button class="bg-blue-400 text-white rounded h-7 ml-2 w-20 font-semibold text-sm m-1">Save</button>
+                     <button class="bg-gray-200 rounded h-7 ml-2 w-20 font-semibold text-sm m-1">Cancel</button>
+                  </div>
+               </div>
+            </nz-collapse-panel>
+         </nz-collapse>
+      </div>
+      <!-- layout design -->
+      <div class="mt-2">
+         <nz-collapse nzAccordion>
+            <nz-collapse-panel *ngFor="let panel of icons" nzHeader="Icone Design" [nzActive]="panel.active">
+               <div class="grid grid-cols-4 shadow-2xl">
+                  <div class=" text-center ">
+                     <img src="../../../../assets//Designcolor//layout design.png" alt="">
+                     <p class="font-semibold text-center">Design 01</p>
+                  </div>
+                  <div class=" text-center ">
+                     <img src="../../../../assets//Designcolor//layout design.png" alt="">
+                     <p class="font-semibold text-center">Design 02</p>
+                  </div>
+                  <div class=" text-center ">
+                     <img src="../../../../assets//Designcolor//layout design.png" alt="">
+                     <p class="font-semibold text-center">Design 03</p>
+                  </div>
+                  <div class=" text-center ">
+                     <img src="../../../../assets//Designcolor//layout design.png" alt="">
+                     <p class="font-semibold text-center">Design 04</p>
+                  </div>
+                  
+               </div>
+            </nz-collapse-panel>
+         </nz-collapse>
+      </div>
+   </div>
+   <div class="my-3">
+      <button class="bg-blue-400 text-white rounded h-7 ml-2 w-20 font-semibold text-sm m-1">Save</button>
+      <button class="bg-gray-200 rounded h-7 ml-2 w-20 font-semibold text-sm m-1">Reset</button>
+   </div>
+</ng-template>
+<button nz-button nzType="primary" (click)="openTemplate()">Drawer Design 1</button>
+&nbsp;

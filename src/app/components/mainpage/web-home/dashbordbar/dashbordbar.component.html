@@ -1,0 +1,87 @@
+<!-- bar before topbar -->
+
+<div class=" flex justify-between items-center py-3 border-b-2 px-1">
+  <div class="grid grid-cols-5 gap-4">
+    <div class="flex  items-center gap-3 font-semibold text-sm px-2  py-2 ">
+      <img src="../../../../../assets/sidebaricon/dasboard.svg" alt="">
+      <div class=" h-full flex justify-between items-center w-full " nz-dropdown nzTrigger="click"
+        [nzDropdownMenu]="menus">
+        <p class="  m-0"> Dashboards</p>
+        <span class="" nz-icon nzType="down"></span>
+      </div>
+      <nz-dropdown-menu #menus="nzDropdownMenu">
+        <div class="bg-white shadow-2xl grid grid-cols-3  p-3 w-[450px]  ">
+          <div *ngFor="let first of listOfnamesfirst ">
+            <p>{{first.name}}</p>
+          </div>
+          <div *ngFor="let second of listOfnamessecond ">
+            <p>{{second.name}}</p>
+          </div>
+          <div *ngFor="let third of listOfnamesthird ">
+            <p>{{third.name}}</p>
+          </div>
+        </div>
+      </nz-dropdown-menu>
+    </div>
+    <div class="flex items-center gap-3 font-semibold text-sm px-2  py-2 ">
+      <img src="../../../../../assets/sidebaricon/elements.svg" alt="">
+      <div class=" h-full flex justify-between items-center w-full " nz-dropdown nzTrigger="click"
+        [nzDropdownMenu]="menu">
+        <p class=" m-0"> Elements</p>
+        <span nz-icon nzType="down"></span>
+      </div>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-menu-item>1st menu item</li>
+          <li nz-menu-item>2nd menu item</li>
+        </ul>
+      </nz-dropdown-menu>
+    </div>
+    <div class="flex items-center gap-3 font-semibold text-sm px-2  py-2 ">
+      <img src="../../../../../assets/left-bar-icon/appstore.svg" alt="">
+      <div class=" h-full flex justify-between items-center w-full " nz-dropdown nzTrigger="click"
+        [nzDropdownMenu]="menu">
+        <p class=" m-0"> Apps</p>
+        <span nz-icon nzType="down"></span>
+      </div>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-menu-item>1st menu item</li>
+          <li nz-menu-item>2nd menu item</li>
+        </ul>
+      </nz-dropdown-menu>
+    </div>
+    <div class="flex items-center gap-3 font-semibold text-sm px-2  py-2 ">
+      <img src="../../../../../assets/sidebaricon/layers.svg" alt="">
+      <div class=" h-full flex justify-between items-center w-full " nz-dropdown nzTrigger="click"
+        [nzDropdownMenu]="menu">
+        <p class=" m-0"> Components</p>
+        <span nz-icon nzType="down"></span>
+      </div>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-menu-item>1st menu item</li>
+          <li nz-menu-item>2nd menu item</li>
+        </ul>
+      </nz-dropdown-menu>
+    </div>
+    <div class="flex items-center gap-3 font-semibold text-sm px-2  py-2 ">
+      <img src="../../../../../assets/sidebaricon/file-text.svg" alt="">
+      <div class=" h-full flex justify-between items-center w-full " nz-dropdown nzTrigger="click"
+        [nzDropdownMenu]="menu">
+        <p class=" m-0"> Extra Pages</p>
+        <span nz-icon nzType="down"></span>
+      </div>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-menu-item>1st menu item</li>
+          <li nz-menu-item>2nd menu item</li>
+        </ul>
+      </nz-dropdown-menu>
+    </div>
+  </div>
+  <!-- dashbordbar right -->
+  <div class=" px-2">
+    <a class="font-bold ">Dashboard/ Details/ Apps/ Work Logo</a>
+</div>
+<!-- bar topbar start -->

@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
-import { registerLocaleData } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -25,35 +24,45 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
-import { WebHomeComponent } from './components/mainpage/web-home/web-home.component';
-import { HomesidebarComponent } from './components/mainpage/web-home/homesidebar/homesidebar.component';
-import { GridtableComponent } from './components/mainpage/web-home/gridtable/gridtable.component';
-import { TopbarComponent } from './components/mainpage/web-home/topbar/topbar.component';
 import { Routes } from '@angular/router';
 import { WebHomeModule } from './components/mainpage/web-home/web-home.module';
+import { TreemenuComponent } from './components/mainpage/treemenu/treemenu.component';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { Designdrawer1Component } from './components/mainpage/designdrawer1/designdrawer1.component';
+import { Designdrawer2Component } from './components/mainpage/designdrawer2/designdrawer2.component';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { LoginComponent } from './components/login/login.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { NotificationComponent } from './components/notification/notification.component';
+import { SearchComponent } from './components/search/search.component';
 
 registerLocaleData(en);
 
-const routes : Routes =[
-  {
-    path: '', 
-    loadChildren: () => import('./components/mainpage/web-home/web-home.module').then(x=>x.WebHomeModule)
-  }
-]
+// const routes : Routes =[
+//   {
+//     path: '', 
+//     loadChildren: () => import('./components/mainpage/web-home/web-home.module').then(x=>x.WebHomeModule)
+//   },
+// ]
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LeftIconeBarComponent,
     MainpageComponent,
-    // WebHomeComponent,
-    // HomesidebarComponent,
-    // GridtableComponent,
-    // TopbarComponent
+    TreemenuComponent,
+    Designdrawer1Component,
+    Designdrawer2Component,
+    LoginComponent,
+    MenuComponent,
+    NotificationComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -69,7 +78,12 @@ const routes : Routes =[
     NzCheckboxModule,
     NzCardModule,
     NzDrawerModule,
-    WebHomeModule
+    WebHomeModule,
+    NzInputModule,
+    NzFormModule,
+    NzCollapseModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }

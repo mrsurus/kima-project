@@ -1,4 +1,4 @@
-<div class="bg-white text-gray-700 h-full ">
+<div class=" text-gray-700   ">
     <div class="flex items-center gap-3 font-semibold text-sm px-2  py-3 ">
         <img  src="../../../../assets/charticons/shopping-cart.svg" alt="">
         <div class=" h-full flex justify-between items-center w-full " nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
@@ -155,30 +155,3 @@
     </div>
 </div>
 
-<!-- <div  class="bg-white text-gray-700 h-screen p-3 ">
-    <nz-tree-view [nzTreeControl]="treeControl" [nzDataSource]="dataSource">
-        <nz-tree-node *nzTreeNodeDef="let node" nzTreeNodePadding>
-            <nz-tree-node-toggle nzTreeNodeNoopToggle></nz-tree-node-toggle>
-            <nz-tree-node-option [nzSelected]="selectListSelection.isSelected(node)"
-                (nzClick)="selectListSelection.toggle(node)">
-                <div class="flex items-center gap-1 ">
-                    <span class="opacity-50" nz-icon nzType="radius-upleft" nzTheme="outline"></span>
-                    {{ node.name }}
-                </div>
-            </nz-tree-node-option>
-        </nz-tree-node>
-
-        <nz-tree-node *nzTreeNodeDef="let node; when: hasChild" nzTreeNodePadding>
-            <nz-tree-node-toggle>
-                <span nz-icon nzType="caret-down" nzTreeNodeToggleRotateIcon></span>
-            </nz-tree-node-toggle>
-            <nz-tree-node-option [nzSelected]="selectListSelection.isSelected(node)"
-                (nzClick)="selectListSelection.toggle(node)">
-                <div class="flex items-center gap-1">
-                    <span class="opacity-50" nz-icon nzType="radius-upleft" nzTheme="outline"></span>
-                    {{ node.name }}
-                </div>
-            </nz-tree-node-option>
-        </nz-tree-node>
-    </nz-tree-view>
-</div> -->

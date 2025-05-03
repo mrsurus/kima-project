@@ -25,6 +25,36 @@
         </div>
     </div>
 </div>
+<!-- design 2 -->
+<div class="bg-white mt-2">
+    <div class="flex border h-9 px-3 justify-between items-center ">
+        <p class=" m-0 font-bold">Form 1</p>
+        <div>
+            <a nz-button [nzSize]="size" nzType="link">Details</a>
+            <a nz-button [nzSize]="size" nzType="link">Assign</a>
+            <span nz-icon nzType="down" nzTheme="outline"></span>
+        </div>
+    </div>
+    <nz-table nzShowPagination="false" #borderedTable nzBordered="true" [nzData]="listOfData">
+        <tbody class="">
+            <tr  *ngFor="let data of borderedTable.data">
+                <td class="p-0 bg-gray-100  border">Name</td>
+                <td class=" p-0">{{ data.name }}</td>
+                <td class="p-0 bg-gray-100">Name</td>
+                <td class="p-0">{{data.name}}</td>
+            </tr>
+        </tbody>
+    </nz-table>
+    <div class="flex border h-9 px-3 justify-end items-center ">
+        <div>
+            <button nz-button nzType="primary" [nzSize]="size2"  >Reply </button>
+            <button class="bg-gray-200 rounded h-8 ml-2 w-24 font-semibold text-sm m-1">Forward</button>
+            
+        </div>
+    </div>
+</div>
+
+<!-- form 3 -->
 <div class="bg-white mt-2">
     <div class="flex border h-9 px-3 justify-between items-center ">
         <p class=" m-0 font-bold">Form 1</p>

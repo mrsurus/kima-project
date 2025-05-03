@@ -1,0 +1,33 @@
+<div class="bg-white z-50 text-gray-700 h-screen p-3 w-64 mr-2 " >
+    <nz-input-group [nzSuffix]="suffixIcon">
+        <input type="text" nz-input placeholder="Search" ngModel (ngModelChange)="searchValue$.next($event)" />
+    </nz-input-group>
+    <ng-template #suffixIcon>
+        <span nz-icon nzType="search"></span>
+    </ng-template>
+    <nz-tree-view [nzTreeControl]="treeControl" [nzDataSource]="dataSource">
+        <nz-tree-node *nzTreeNodeDef="let node" nzTreeNodePadding>
+            <nz-tree-node-toggle nzTreeNodeNoopToggle></nz-tree-node-toggle>
+            <nz-tree-node-option [nzSelected]="selectListSelection.isSelected(node)"
+                (nzClick)="selectListSelection.toggle(node)">
+                <div class="flex items-center gap-1 ">
+                    <span class="opacity-50" nz-icon nzType="radius-upleft" nzTheme="outline"></span>
+                    {{ node.name }}
+                </div>
+            </nz-tree-node-option>
+        </nz-tree-node>
+
+        <nz-tree-node *nzTreeNodeDef="let node; when: hasChild" nzTreeNodePadding>
+            <nz-tree-node-toggle>
+                <span nz-icon nzType="caret-down" nzTreeNodeToggleRotateIcon></span>
+            </nz-tree-node-toggle>
+            <nz-tree-node-option [nzSelected]="selectListSelection.isSelected(node)"
+                (nzClick)="selectListSelection.toggle(node)">
+                <div class="flex items-center gap-1">
+                    <span class="opacity-50" nz-icon nzType="radius-upleft" nzTheme="outline"></span>
+                    {{ node.name }}
+                </div>
+            </nz-tree-node-option>
+        </nz-tree-node>
+    </nz-tree-view>
+</div>

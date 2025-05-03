@@ -1,0 +1,165 @@
+
+<ng-template #drawerTemplate let-data let-drawerRef="drawerRef">
+    <!-- Application menu bar -->
+    <div>
+        <div class="flex gap-5">
+            <p class="font-light">Application Menu</p>
+            <p class="font-light">In Page Menu</p>
+        </div>
+        <div>
+            <p>Application Menu Configuration</p>
+        </div>
+    </div>
+    <!-- application menu home section -->
+    <div class=" mt-3">
+        <!-- menu design -->
+            <div >
+                <div>
+                    <span class="text-2xl font-semibold">Icon Design</span>
+                    <p>Choose icon design</p>
+                </div>
+                <div class="grid grid-cols-5 gap-2 w-full" *ngFor="let icon of icons"> 
+                    <div>
+                        <span class="font-semibold  ">Font Family</span>
+                        <div class="flex items-center rounded p-1 bg-gray-100">
+                            <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+                                Uppercase
+                                <span nz-icon nzType="down"></span>
+                              </a>
+                              <nz-dropdown-menu #menu="nzDropdownMenu">
+                                <ul nz-menu>
+                                  <li nz-menu-item>1st menu item</li>
+                                  <li nz-menu-item>2nd menu item</li>
+                                </ul>
+                             </nz-dropdown-menu>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-semibold  ">Background Color</span>
+                        <div class="flex items-center rounded p-1 bg-gray-100">
+                            <img class=" mr-4" h-6 w-6 src="../../../../assets/Designcolor/black.png" alt="">
+                            <p class="my-0">{{icon.iconcolor}}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-semibold  ">Text Color</span>
+                        <div class="flex items-center rounded p-1 bg-gray-100">
+                            <img class=" mr-4" h-6 w-6 src="../../../../assets/Designcolor/black.png" alt="">
+                            <p class="my-0">{{icon.iconcolor}}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-semibold  ">Active Color</span>
+                        <div class="flex items-center rounded p-1">
+                            <img class=" mr-4" h-6 w-6 src="../../../../assets/Designcolor/blue.png" alt="">
+                            <p class="my-0">{{icon.iconcolor}}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-semibold  ">Active text Color</span>
+                        <div class="flex items-center rounded p-1 bg-gray-100">
+                            <img class=" mr-4" h-6 w-6 src="../../../../assets/Designcolor/blue.png" alt="">
+                            <p class="my-0">{{icon.iconcolor}}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-semibold  ">Hover Text Color</span>
+                        <div class="flex items-center rounded p-1 bg-gray-100">
+                            <img class=" mr-4" h-6 w-6 src="../../../../assets/Designcolor/black.png" alt="">
+                            <p class="my-0">{{icon.iconcolor}}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-semibold  ">Text Size Color</span>
+                       
+                    </div>
+                    
+                </div>
+
+        </div>
+        <!-- icone design -->
+        <div class="mt-3">
+            <div>
+                <span class="text-2xl font-semibold">Icon Design</span>
+                <p>Choose icon design</p>
+            </div>
+            <div class="grid grid-cols-5 gap-2 w-full" *ngFor="let icon of icons"> 
+                <div>
+                    <span class="font-semibold  ">Icon Color</span>
+                    <div class="flex items-center rounded p-1 bg-gray-100">
+                        <img class=" mr-4" h-6 w-6 src="../../../../assets/Designcolor/blue.png" alt="">
+                        <p class="my-0">{{icon.iconcolor}}</p>
+                    </div>
+                </div>
+                <div>
+                    <span class="font-semibold  ">Icon Color</span>
+                    <div class="flex items-center rounded p-1 bg-gray-100">
+                        <img class=" mr-4" h-6 w-6 src="../../../../assets/Designcolor/black.png" alt="">
+                        <p class="my-0">{{icon.iconcolor}}</p>
+                    </div>
+                </div>
+                <div>
+                    <span class="font-semibold  ">Icon Color</span>
+                    <div class="flex items-center rounded p-1 bg-gray-100">
+                        <img class=" mr-4" h-6 w-6 src="../../../../assets/Designcolor/black.png" alt="">
+                        <p class="my-0">{{icon.iconcolor}}</p>
+                    </div>
+                </div>
+                <div>
+                    <span class="font-semibold  ">Icon Color</span>
+                    <div class="flex items-center rounded p-1">
+
+                    </div>
+                </div>
+                <div>
+                    <span class="font-semibold  ">Icon Color</span>
+                    <div class="flex items-center rounded p-1 bg-gray-100">
+                        <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+                            Icon Type
+                            <span nz-icon nzType="down"></span>
+                          </a>
+                          <nz-dropdown-menu #menu="nzDropdownMenu">
+                            <ul nz-menu>
+                              <li nz-menu-item>1st menu item</li>
+                              <li nz-menu-item>2nd menu item</li>
+                            </ul>
+                         </nz-dropdown-menu>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- layout design -->
+        <div class="mt-3">
+            <div>
+                <p class="text-2xl font-semibold">Icon Design</p>
+                <p>Choose icon design</p>
+            </div>
+            <div class="grid grid-cols-4 shadow-2xl">
+                <div class=" text-center ">
+                    <img src="../../../../assets//Designcolor/blue design.png" alt="">
+                    <p class="font-semibold text-center">Design 01</p>
+                </div>
+                <div class=" text-center ">
+                    <img src="../../../../assets//Designcolor/blue design.png" alt="">
+                    <p class="font-semibold text-center">Design 02</p>
+                </div>
+                <div class=" text-center ">
+                    <img src="../../../../assets//Designcolor/blue design.png" alt="">
+                    <p class="font-semibold text-center">Design 03</p>
+                </div>
+                <div class=" text-center ">
+                    <img src="../../../../assets//Designcolor/blue design.png" alt="">
+                    <p class="font-semibold text-center">Design 04</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="my-3">
+        <button class="bg-blue-400 text-white rounded h-7 ml-2 w-20 font-semibold text-sm m-1">Save</button>
+        <button class="bg-gray-200 rounded h-7 ml-2 w-20 font-semibold text-sm m-1">Reset</button>
+    </div>
+</ng-template>
+<button nz-button nzType="primary" (click)="openTemplate()">Drawer design 2</button>
+&nbsp;

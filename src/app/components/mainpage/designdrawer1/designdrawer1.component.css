@@ -1,0 +1,11 @@
+.some {
+    width: 1000px ;
+    position: fixed;
+    border: 2px solid red;
+}
+
+.colorbox{
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+}

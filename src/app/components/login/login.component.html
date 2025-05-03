@@ -1,0 +1,19 @@
+<div class="text-red-500 text-2xl text-center my-4">This is login form</div>
+<form nz-form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-control>
+        <input nz-input formControlName="email" placeholder="email" />
+      </nz-form-control>
+    </nz-form-item>
+    
+    <nz-form-item>
+      <nz-form-control >
+        <input nz-input type="password" formControlName="password" placeholder="Password" />
+      </nz-form-control>
+      
+    </nz-form-item>
+    
+    <nz-form-item>
+      <button nz-button nzType="primary" type="submit">Login</button>
+    </nz-form-item>
+  </form>

@@ -1,0 +1,14 @@
+.wrapper {
+    width: 240px;
+  }
+
+  button {
+    margin-bottom: 12px;
+    
+  }
+
+  ul li{
+    font-weight: bold;
+    background: none;
+  }
+  
